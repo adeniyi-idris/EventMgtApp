@@ -1,0 +1,29 @@
+﻿@using EventManagementApp.Enums
+@model Registration 
+@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+
+<form method="post" asp-action="Create" class="row g-3">
+    <div class="col-md-6">
+        <label asp-for="RegistyrationDate" class="form-label">Email</label>
+        <input asp-for="RegistyrationDate" type="date" class="form-control" id="inputEmail4">
+    </div>
+    <div class="col-md-6">
+        <label asp-for="FormatType">ClubCategory</label>
+        <select asp-for="FormatType" asp-items="@Html.GetEnumSelectList<FormatType>()" class="form-control form-control-lg">
+            <option>--Select--</option>
+        </select>
+    </div>
+    <div class="col-md-6">
+        <label asp-for="IndustryType">ClubCategory</label>
+        <select asp-for="IndustryType" asp-items="@Html.GetEnumSelectList<IndustryType>()" class="form-control form-control-lg">
+            <option>--Select--</option>
+        </select>
+    </div>
+    <div class="col-12">
+        <button type="submit" class="btn btn-primary">Sign in</button>
+    </div>
+</form>
