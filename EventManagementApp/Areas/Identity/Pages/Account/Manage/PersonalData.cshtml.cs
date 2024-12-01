@@ -2,13 +2,13 @@
 // The .NET Foundation licenses this file to you under the MIT license.
 using System;
 using System.Threading.Tasks;
-using EventManagementApp.Data;
+using EMA.Data;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.Extensions.Logging;
 
-namespace EventManagementApp.Areas.Identity.Pages.Account.Manage
+namespace EMA.Areas.Identity.Pages.Account.Manage
 {
     public class PersonalDataModel : PageModel
     {

@@ -1,9 +1,9 @@
-﻿using EventManagementApp.Models;
+﻿using EMA.Models;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 
-namespace EventManagementApp.Data
+namespace EMA.Data
 {
     public class DataContext: IdentityDbContext<AppUser>
     {

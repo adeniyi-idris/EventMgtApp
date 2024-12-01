@@ -1,4 +1,4 @@
-﻿namespace EventManagementApp.Enums
+﻿namespace EMA.Enums
 {
     public enum YourRoleType
     {

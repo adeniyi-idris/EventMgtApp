@@ -1,6 +1,6 @@
-﻿using EventManagementApp.Enums;
+﻿using EMA.Enums;
 
-namespace EventManagementApp.Models
+namespace EMA.Models
 {
     public class Event
     {

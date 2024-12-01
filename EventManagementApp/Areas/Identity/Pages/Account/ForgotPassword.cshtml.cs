@@ -8,14 +8,14 @@ using System.Text;
 using System.Text.Encodings.Web;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Authorization;
-using EventManagementApp.Data;
+using EMA.Data;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Identity.UI.Services;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.AspNetCore.WebUtilities;
 
-namespace EventManagementApp.Areas.Identity.Pages.Account
+namespace EMA.Areas.Identity.Pages.Account
 {
     public class ForgotPasswordModel : PageModel
     {

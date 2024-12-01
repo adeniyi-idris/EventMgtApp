@@ -1,14 +1,12 @@
-﻿using EventManagementApp.Data;
+﻿using EMA.Data;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 
-namespace EventManagementApp.Controllers
+namespace EMA.Controllers
 {
     public class AccountController : Controller
     {
-        RoleManager<IdentityRole> _roleManager;
- 
-
+        private readonly RoleManager<IdentityRole> _roleManager;
         public AccountController(RoleManager<IdentityRole> roleManager)
         {
             _roleManager = roleManager;
@@ -31,6 +29,9 @@ namespace EventManagementApp.Controllers
             await _roleManager.CreateAsync(role);
             return RedirectToAction("Index");
         }
+
+
+
     }
 }
 

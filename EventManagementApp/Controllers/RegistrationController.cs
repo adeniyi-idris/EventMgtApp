@@ -1,8 +1,8 @@
-﻿using EventManagementApp.Data;
-using EventManagementApp.Models;
+﻿using EMA.Data;
+using EMA.Models;
 using Microsoft.AspNetCore.Mvc;
 
-namespace EventManagementApp.Controllers
+namespace EMA.Controllers
 {
     public class RegistrationController : Controller
     {

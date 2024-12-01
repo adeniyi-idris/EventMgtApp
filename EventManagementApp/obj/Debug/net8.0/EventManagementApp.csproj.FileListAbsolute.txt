@@ -315,3 +315,4 @@ C:\Users\user\Documents\DevProject\EventManegmentApp\EventManagementApp\obj\Debu
 C:\Users\user\Documents\DevProject\EventManegmentApp\EventManagementApp\obj\Debug\net8.0\EventManagementApp.pdb
 C:\Users\user\Documents\DevProject\EventManegmentApp\EventManagementApp\obj\Debug\net8.0\EventManagementApp.genruntimeconfig.cache
 C:\Users\user\Documents\DevProject\EventManegmentApp\EventManagementApp\obj\Debug\net8.0\ref\EventManagementApp.dll
+C:\Users\user\Documents\DevProject\EventManegmentApp\EventManagementApp\obj\Debug\net8.0\EventManagementApp.sourcelink.json

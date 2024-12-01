@@ -1,8 +1,8 @@
 ﻿using System.ComponentModel.DataAnnotations.Schema;
-using EventManagementApp.Data;
-using EventManagementApp.Enums;
+using EMA.Data;
+using EMA.Enums;
 
-namespace EventManagementApp.Models
+namespace EMA.Models
 {
     public class Registration
     {

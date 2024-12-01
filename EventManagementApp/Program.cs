@@ -1,4 +1,4 @@
-using EventManagementApp.Data;
+using EMA.Data;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 

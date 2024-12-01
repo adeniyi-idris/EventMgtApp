@@ -1,4 +1,4 @@
-﻿namespace EventManagementApp.Data
+﻿namespace EMA.Data
 {
     public static class Role
     {
