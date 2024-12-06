@@ -48,7 +48,6 @@ namespace EMA.Migrations
                         .HasColumnType("datetimeoffset");
 
                     b.Property<string>("NickName")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("NormalizedEmail")
@@ -99,6 +98,9 @@ namespace EMA.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
+                    b.Property<string>("AppUserId")
+                        .HasColumnType("nvarchar(450)");
+
                     b.Property<string>("Description")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
@@ -125,6 +127,8 @@ namespace EMA.Migrations
                         .HasColumnType("nvarchar(max)");
 
                     b.HasKey("Id");
+
+                    b.HasIndex("AppUserId");
 
                     b.ToTable("Events");
                 });
@@ -294,6 +298,15 @@ namespace EMA.Migrations
                     b.ToTable("AspNetUserTokens", (string)null);
                 });
 
+            modelBuilder.Entity("EMA.Models.Event", b =>
+                {
+                    b.HasOne("EMA.Models.AppUser", "AppUser")
+                        .WithMany("Events")
+                        .HasForeignKey("AppUserId");
+
+                    b.Navigation("AppUser");
+                });
+
             modelBuilder.Entity("EMA.Models.Registration", b =>
                 {
                     b.HasOne("EMA.Models.AppUser", "AppUser")
@@ -364,6 +377,8 @@ namespace EMA.Migrations
 
             modelBuilder.Entity("EMA.Models.AppUser", b =>
                 {
+                    b.Navigation("Events");
+
                     b.Navigation("Registrations");
                 });
 

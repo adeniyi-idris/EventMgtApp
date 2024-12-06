@@ -173,7 +173,7 @@ namespace EMA.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Login(LoginViewModel loginViewModel, string returnUrl)
+        public async Task<IActionResult> Login(LoginViewModel loginViewModel, string? returnUrl = null)
         {
             if (ModelState.IsValid)
             {
@@ -197,22 +197,22 @@ namespace EMA.Controllers
 
         public async Task<IActionResult> Register(string? returnUrl = null)
         {
-            if (!await _roleManager.RoleExistsAsync("Pokemon"))
+            if (!await _roleManager.RoleExistsAsync("User"))
             {
-                await _roleManager.CreateAsync(new IdentityRole("Pokemon"));
-                await _roleManager.CreateAsync(new IdentityRole("Trainer"));
+                await _roleManager.CreateAsync(new IdentityRole("User"));
+                await _roleManager.CreateAsync(new IdentityRole("Admin"));
             }
 
             List<SelectListItem> listItems = new List<SelectListItem>();
             listItems.Add(new SelectListItem()
             {
-                Value = "Pokemon",
-                Text = "Pokemon"
+                Value = "User",
+                Text = "User"
             });
             listItems.Add(new SelectListItem()
             {
-                Value = "Trainer",
-                Text = "Trainer"
+                Value = "Admin",
+                Text = "Admin"
             });
 
             RegisterViewModel registerViewModel = new RegisterViewModel();
@@ -232,13 +232,13 @@ namespace EMA.Controllers
                 var result = await _userManager.CreateAsync(user, registerViewModel.Password);
                 if (result.Succeeded)
                 {
-                    if (registerViewModel.RoleSelected != null && registerViewModel.RoleSelected.Length > 0 && registerViewModel.RoleSelected == "Trainer")
+                    if (registerViewModel.RoleSelected != null && registerViewModel.RoleSelected.Length > 0 && registerViewModel.RoleSelected == "User")
                     {
-                        await _userManager.AddToRoleAsync(user, "Trainer");
+                        await _userManager.AddToRoleAsync(user, "User");
                     }
                     else
                     {
-                        await _userManager.AddToRoleAsync(user, "Pokemon");
+                        await _userManager.AddToRoleAsync(user, "Admin");
                     }
                     await _signInManager.SignInAsync(user, isPersistent: false);
                     return LocalRedirect(returnUrl);
@@ -268,4 +268,6 @@ namespace EMA.Controllers
             return RedirectToAction("Index", "Home");
         }
     }
+    //Xw`\P>3W{q
+    //FP4.$BsAu~
 }
