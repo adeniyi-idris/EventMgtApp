@@ -1,32 +1,81 @@
-﻿@using EMA.Enums
-@model Registration 
-@*
-    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
-*@
+﻿@model EMA.Models.Registration
+
 @{
+    ViewData["Title"] = "Delete";
 }
 
-<form method="post" asp-action="Create" class="row g-3">
-    <div class="mb-3">
-        <input hidden asp-for="Id" class="form-control" />
-    </div>
-    <div class="col-md-6">
-        <label asp-for="RegistyrationDate" class="form-label">Email</label>
-        <input asp-for="RegistyrationDate" type="date" class="form-control" id="inputEmail4" disabled/>
-    </div>
-    <div class="col-md-6">
-        <label asp-for="FormatType">ClubCategory</label>
-        <select asp-for="FormatType" asp-items="@Html.GetEnumSelectList<FormatType>()" class="form-control form-control-lg" disabled/>
-            <option>--Select--</option>
-        </select>
-    </div>
-    <div class="col-md-6">
-        <label asp-for="IndustryType">ClubCategory</label>
-        <select asp-for="IndustryType" asp-items="@Html.GetEnumSelectList<IndustryType>()" class="form-control form-control-lg"disabled/>
-            <option>--Select--</option>
-        </select>
-    </div>
-    <div class="col-12">
-        <button type="submit" class="btn btn-primary">Sign in</button>
-    </div>
-</form>
+<h1>Delete</h1>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>Registration</h4>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.FirstName)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.FirstName)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.LastName)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.LastName)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Email)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Email)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.PhoneNumber)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.PhoneNumber)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Organization)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Organization)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.RegistrationType)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.RegistrationType)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.SpecialRequirements)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.SpecialRequirements)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.AcceptTerms)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.AcceptTerms)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.AppUser)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.AppUser.Id)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Event)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Event.Id)
+        </dd>
+    </dl>
+    
+    <form asp-action="Delete">
+        <input type="hidden" asp-for="Id" />
+        <input type="submit" value="Delete" class="btn btn-danger" /> |
+        <a asp-action="Index">Back to List</a>
+    </form>
+</div>

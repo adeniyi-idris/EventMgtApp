@@ -1,0 +1,126 @@
+﻿@using EMA.Enums
+@model Registration 
+@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+
+<div class="container mt-5">
+    <div class="row justify-content-center">
+        <div class="col-md-8">
+            <div class="card">
+                <div class="card-header bg-primary text-white">
+                    <h3 class="text-center mb-0">User Registration</h3>
+                </div>
+                <div class="card-body">
+                    <form asp-action="Create" method="post">
+                        @* <input type="hidden" asp-for="EventId" /> *@
+                        <div>
+                            <label asp-for="EventId" class="form-label"></label>
+                            <select asp-for="EventId" class="form-control" asp-items="ViewBag.EventId"></select>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6 mb-3">
+                                <label asp-for="FirstName" class="form-label">First Name</label>
+                                <input asp-for="FirstName" class="form-control" placeholder="Enter first name" required />
+                                <span asp-validation-for="FirstName" class="text-danger"></span>
+                            </div>
+
+                            <div class="col-md-6 mb-3">
+                                <label asp-for="LastName" class="form-label">Last Name</label>
+                                <input asp-for="LastName" class="form-control" placeholder="Enter last name" required />
+                                <span asp-validation-for="LastName" class="text-danger"></span>
+                            </div>
+                        </div>
+
+                        <div class="mb-3">
+                            <label asp-for="Email" class="form-label">Email Address</label>
+                            <input asp-for="Email" type="email" class="form-control" placeholder="Enter email" required />
+                            <span asp-validation-for="Email" class="text-danger"></span>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-md-6 mb-3">
+                                <label asp-for="PhoneNumber" class="form-label">Phone Number</label>
+                                <input asp-for="PhoneNumber" type="tel" class="form-control" placeholder="Enter phone number" />
+                                <span asp-validation-for="PhoneNumber" class="text-danger"></span>
+                            </div>
+
+                            <div class="col-md-6 mb-3">
+                                <label asp-for="Organization" class="form-label">Organization</label>
+                                <input asp-for="Organization" class="form-control" placeholder="Your company or institution" />
+                                <span asp-validation-for="Organization" class="text-danger"></span>
+                            </div>
+                        </div>
+
+                        <div class="mb-3">
+                            <label asp-for="RegistrationType" class="form-label">Registration Type</label>
+                            <select asp-for="RegistrationType" asp-items="Html.GetEnumSelectList<RegistrationType>()" class="form-select" required>
+                                <option value="">Select Registration Type</option>
+                            </select>
+                            <span asp-validation-for="RegistrationType" class="text-danger"></span>
+                        </div>
+
+                        <div class="mb-3">
+                            <label asp-for="SpecialRequirements" class="form-label">Special Requirements</label>
+                            <textarea asp-for="SpecialRequirements" class="form-control" rows="3" placeholder="Any dietary restrictions, accessibility needs, etc."></textarea>
+                        </div>
+
+                        <div class="form-check mb-3">
+                            <input asp-for="AcceptTerms" type="checkbox" class="form-check-input" required />
+                            <label asp-for="AcceptTerms" class="form-check-label">
+                                I agree to the event terms and conditions
+                            </label>
+                            <span asp-validation-for="AcceptTerms" class="text-danger"></span>
+                        </div>
+
+                        <button type="submit" class="btn btn-primary w-100">Register</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@* <form method="post" asp-action="Create" class="row g-3">
+    <div class="col-md-6">
+        <label asp-for="RegistyrationDate" class="form-label">Email</label>
+        <input asp-for="RegistyrationDate" type="date" class="form-control" id="inputEmail4">
+    </div>
+    <div class="col-md-6">
+        <label asp-for="FormatType">ClubCategory</label>
+        <select asp-for="FormatType" asp-items="@Html.GetEnumSelectList<FormatType>()" class="form-control form-control-lg">
+            <option>--Select--</option>
+        </select>
+    </div>
+    <div class="col-md-6">
+        <label asp-for="IndustryType">ClubCategory</label>
+        <select asp-for="IndustryType" asp-items="@Html.GetEnumSelectList<IndustryType>()" class="form-control form-control-lg">
+            <option>--Select--</option>
+        </select>
+    </div>
+    <div class="col-12">
+        <button type="submit" class="btn btn-primary">Sign in</button>
+    </div>
+</form> *@

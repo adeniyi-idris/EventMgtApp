@@ -5,6 +5,10 @@
       "PackagePath": "staticwebassets\\EMA.bundle.scp.css"
     },
     {
+      "Id": "C:\\Users\\user\\Documents\\DevProject\\EventManegmentApp\\EMA\\wwwroot\\css\\index.css",
+      "PackagePath": "staticwebassets\\css\\index.css"
+    },
+    {
       "Id": "C:\\Users\\user\\Documents\\DevProject\\EventManegmentApp\\EMA\\wwwroot\\css\\site.css",
       "PackagePath": "staticwebassets\\css\\site.css"
     },

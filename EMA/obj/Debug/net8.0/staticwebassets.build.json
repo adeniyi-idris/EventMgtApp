@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "LRePTms3BbNlefxhRAlNJUL/JZ2Rt9d7DA9FkKkBUFI=",
+  "Hash": "egD60/V3z1k8UEOElwXUUjisu1pQc4nlPQEUYWLhmI4=",
   "Source": "EMA",
   "BasePath": "_content/EMA",
   "Mode": "Default",
@@ -53,6 +53,25 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "C:\\Users\\user\\Documents\\DevProject\\EventManegmentApp\\EMA\\obj\\Debug\\net8.0\\scopedcss\\projectbundle\\EMA.bundle.scp.css"
+    },
+    {
+      "Identity": "C:\\Users\\user\\Documents\\DevProject\\EventManegmentApp\\EMA\\wwwroot\\css\\index.css",
+      "SourceId": "EMA",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\user\\Documents\\DevProject\\EventManegmentApp\\EMA\\wwwroot\\",
+      "BasePath": "_content/EMA",
+      "RelativePath": "css/index.css",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\css\\index.css"
     },
     {
       "Identity": "C:\\Users\\user\\Documents\\DevProject\\EventManegmentApp\\EMA\\wwwroot\\css\\site.css",

@@ -1,6 +1,12 @@
-﻿using EMA.Data;
-using EMA.Models;
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.Rendering;
+using Microsoft.EntityFrameworkCore;
+using EMA.Data;
+using EMA.Models;
 
 namespace EMA.Controllers
 {
@@ -12,94 +18,153 @@ namespace EMA.Controllers
         {
             _context = context;
         }
-        public IActionResult Index()
+
+        // GET: Registrations2
+        public async Task<IActionResult> Index()
         {
-            List<Registration> reg = new List<Registration>();
-            return View(reg);
+            var dataContext = _context.Registrations.Include(r => r.AppUser).Include(r => r.Event);
+            return View(await dataContext.ToListAsync());
         }
 
-        public IActionResult Detail(int id)
+        // GET: Registrations2/Details/5
+        public async Task<IActionResult> Details(int? id)
         {
-            Registration reg = _context.Registrations.FirstOrDefault(x => x.Id == id);
-            return View(reg);
+            if (id == null)
+            {
+                return NotFound();
+            }
+
+            var registration = await _context.Registrations
+                .Include(r => r.AppUser)
+                .Include(r => r.Event)
+                .FirstOrDefaultAsync(m => m.Id == id);
+            if (registration == null)
+            {
+                return NotFound();
+            }
+
+            return View(registration);
         }
 
+        // GET: Registrations2/Create
         public IActionResult Create()
         {
-            var reg = new Registration();
-            return View(reg);
+            ViewData["AppUserId"] = new SelectList(_context.AppUser, "Id", "Id");
+            ViewData["EventId"] = new SelectList(_context.Events, "Id", "Id");
+            return View();
         }
 
-        [HttpPost]
-        public IActionResult Create(Registration reg)
-        {
-            if (ModelState.IsValid)
-            {
-                _context.Registrations.Add(reg);
-                _context.SaveChanges();
-                return RedirectToAction("Index");
-            }
-            return View(reg);
-        }
-
-        public IActionResult Edit(int id)
-        {
-            if (id == null || id == 0)
-            {
-                return NotFound();
-            }
-
-            var reg = _context.Registrations.FirstOrDefault(x =>x.Id == id);
-
-            if (reg == null)
-            {
-                return NotFound();
-            }
-            return View(reg);
-        }
-
-        [HttpPost]
-        public IActionResult Edit(Registration reg)
-        {
-            if (ModelState.IsValid)
-            {
-                _context.Registrations.Update(reg);
-                _context.SaveChanges();
-                return RedirectToAction("Index");
-            }
-            return View(reg);
-        }
-
-        public IActionResult Delete(int? id)
-        {
-            if (id == null || id == 0)
-            {
-                return NotFound();
-            }
-
-            var reg = _context.Registrations.FirstOrDefault(x => x.Id == id);
-
-            if (reg == null)
-            {
-                return NotFound();
-            }
-            return View(reg);
-        }
-
+        // POST: Registrations2/Create
+        // To protect from overposting attacks, enable the specific properties you want to bind to.
+        // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public IActionResult Delete(int id)
+        public async Task<IActionResult> Create([Bind("Id,EventId,AppUserId,FirstName,LastName,Email,PhoneNumber,Organization,RegistrationType,SpecialRequirements,AcceptTerms")] Registration registration)
         {
-            var reg = _context.Registrations.FirstOrDefault(x => x.Id == id);
+            if (ModelState.IsValid)
+            {
+                _context.Add(registration);
+                await _context.SaveChangesAsync();
+                return RedirectToAction(nameof(Index));
+            }
+            ViewData["AppUserId"] = new SelectList(_context.AppUser, "Id", "Id", registration.AppUserId);
+            ViewData["EventId"] = new SelectList(_context.Events, "Id", "Id", registration.EventId);
+            return View(registration);
+        }
 
-            if (reg == null)
+        // GET: Registrations2/Edit/5
+        public async Task<IActionResult> Edit(int? id)
+        {
+            if (id == null)
             {
                 return NotFound();
             }
 
-            _context.Registrations.Remove(reg);
-            _context.SaveChanges();
-            return RedirectToAction("Index");
+            var registration = await _context.Registrations.FindAsync(id);
+            if (registration == null)
+            {
+                return NotFound();
+            }
+            ViewData["AppUserId"] = new SelectList(_context.AppUser, "Id", "Id", registration.AppUserId);
+            ViewData["EventId"] = new SelectList(_context.Events, "Id", "Id", registration.EventId);
+            return View(registration);
+        }
+
+        // POST: Registrations2/Edit/5
+        // To protect from overposting attacks, enable the specific properties you want to bind to.
+        // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> Edit(int id, [Bind("Id,EventId,AppUserId,FirstName,LastName,Email,PhoneNumber,Organization,RegistrationType,SpecialRequirements,AcceptTerms")] Registration registration)
+        {
+            if (id != registration.Id)
+            {
+                return NotFound();
+            }
+
+            if (ModelState.IsValid)
+            {
+                try
+                {
+                    _context.Update(registration);
+                    await _context.SaveChangesAsync();
+                }
+                catch (DbUpdateConcurrencyException)
+                {
+                    if (!RegistrationExists(registration.Id))
+                    {
+                        return NotFound();
+                    }
+                    else
+                    {
+                        throw;
+                    }
+                }
+                return RedirectToAction(nameof(Index));
+            }
+            ViewData["AppUserId"] = new SelectList(_context.AppUser, "Id", "Id", registration.AppUserId);
+            ViewData["EventId"] = new SelectList(_context.Events, "Id", "Id", registration.EventId);
+            return View(registration);
+        }
+
+        // GET: Registrations2/Delete/5
+        public async Task<IActionResult> Delete(int? id)
+        {
+            if (id == null)
+            {
+                return NotFound();
+            }
+
+            var registration = await _context.Registrations
+                .Include(r => r.AppUser)
+                .Include(r => r.Event)
+                .FirstOrDefaultAsync(m => m.Id == id);
+            if (registration == null)
+            {
+                return NotFound();
+            }
+
+            return View(registration);
+        }
+
+        // POST: Registrations2/Delete/5
+        [HttpPost, ActionName("Delete")]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> DeleteConfirmed(int id)
+        {
+            var registration = await _context.Registrations.FindAsync(id);
+            if (registration != null)
+            {
+                _context.Registrations.Remove(registration);
+            }
+
+            await _context.SaveChangesAsync();
+            return RedirectToAction(nameof(Index));
+        }
+
+        private bool RegistrationExists(int id)
+        {
+            return _context.Registrations.Any(e => e.Id == id);
         }
     }
 }

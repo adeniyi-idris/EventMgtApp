@@ -10,94 +10,143 @@
 </div>
 <div class="main-container">
     <section class="space-sm">
-        <div class="container">
-            <div class="row mb-5">
-                <!--end of col-->
-            </div>
-            <!--end of row-->
-            <div class="row flex-md-row card card-md">
-                <div class="card-body bg-secondary">
-                    <div class="text-center mb-5">
-                        <h1 class="h2 mb-2">Create your own Stunning Events</h1>
-                        <span>Bring together people in your community</span>
+        <div class="container mt-5">
+            <h2 class="mb-4">Register For Event</h2>
+
+            <form asp-action="Create" method="post">
+                <div class="row">
+                    <div class="col-md-6 mb-3">
+                        <label asp-for="Title" class="form-label">Event Title</label>
+                        <input asp-for="Title" class="form-control" placeholder="Enter event title" required />
+                        <span asp-validation-for="Title" class="text-danger"></span>
                     </div>
-                    <div class="row justify-content-center">
-                        <div class="col-6 col-lg-5">
-                            <form method="post" asp-action="Create" enctype="multipart/form-data">
-                                <div class="form-row form-group">
-                                    <div class="col">
-                                        <label asp-for="Type">Type</label>
-                                        <input asp-for="Type" class="form-control form-control-lg" placeholder="Title" />
-                                        <span asp-validation-for="Type" class="text-danger"></span>
-                                    </div>
-                                    <div class="col">
-                                        <label asp-for="FormatType">ClubCategory</label>
-                                        <select asp-for="FormatType" asp-items="@Html.GetEnumSelectList<FormatType>()" class="form-control form-control-lg">
-                                            <option>--Select--</option>
-                                        </select>
-                                        <span asp-validation-for="FormatType" class="text-danger"></span>
-                                    </div>
-                                </div>
-                                <div class="form-row form-group">
-                                    <div class="col">
-                                        <label asp-for="Title">Title</label>
-                                        <input asp-for="Title" type="text" class="form-control form-control-lg" placeholder="Description" />
-                                        <span asp-validation-for="Title" class="text-danger"></span>
-                                    </div>
-                                </div>
-                                <div class="form-row form-group">
-                                    <div class="col">
-                                        <label asp-for="Description">Description</label>
-                                        <input asp-for="Description" type="text" class="form-control form-control-lg" placeholder="Description" />
-                                        <span asp-validation-for="Description" class="text-danger"></span>
-                                    </div>
-                                </div>
-                                <div class="form-row form-group">
-                                    <div class="col">
-                                        <label asp-for="StartDate">@Model.StartDate</label>
-                                        <input asp-for="StartDate" type="date" class="form-control form-control-lg"/>
-                                        <span asp-validation-for="StartDate" class="text-danger"></span>
-                                    </div>
-                                </div>
-                                <div class="form-row form-group">
-                                    <div class="col">
-                                        <label asp-for="EndDate">@Model.EndDate</label>
-                                        <input asp-for="EndDate" type="date" class="form-control form-control-lg"/>
-                                        <span asp-validation-for="EndDate" class="text-danger"></span>
-                                    </div>
-                                </div>
-                                <div class="form-row form-group">
-                                    <div class="col">
-                                        <label asp-for="Location">Location</label>
-                                        <input asp-for="Location" class="form-control form-control-lg" />
-                                        <span asp-validation-for="Location" class="text-danger"></span>
-                                    </div>
-                                </div>
-                                   @* <div class="col">
-                                        <label asp-for="Address.State">State</label>
-                                        <input asp-for="Address.State" class="form-control form-control-lg" placeholder="State" />
-                                        <span asp-validation-for="Address.State" class="text-danger"></span>
-                                    </div>
-                                </div>
-                                <div class="form-row form-group">
-                                    <div class="col">
-                                        <label asp-for="Image">Image</label>
-                                        <input asp-for="Image" type="file" class="form-control form-control-lg" placeholder="Image" />
-                                        <span asp-validation-for="Image" class="text-danger"></span>
-                                    </div>
-                                </div>*@
-                                <div class="form-row form-group">
-                                    <div class="col">
-                                        <button class="btn btn-block btn-success btn-lg" type="submit">Register</button>
-                                    </div>
-                                </div>
-                            </form>
-                        </div>
+
+                    <div class="col-md-6 mb-3">
+                        <label asp-for="Type" class="form-label">Event Type</label>
+                        <input asp-for="Type" class="form-control" placeholder="Conference, Workshop, etc." />
+                        <span asp-validation-for="Type" class="text-danger"></span>
                     </div>
                 </div>
-            </div>
+
+                <div class="mb-3">
+                    <label asp-for="Description" class="form-label">Event Description</label>
+                    <textarea asp-for="Description" class="form-control" rows="3" placeholder="Describe your event"></textarea>
+                    <span asp-validation-for="Description" class="text-danger"></span>
+                </div>
+
+                <div class="row">
+                    <div class="col-md-6 mb-3">
+                        <label asp-for="StartDate" class="form-label">Start Date</label>
+                        <input asp-for="StartDate" type="datetime-local" class="form-control" required />
+                        <span asp-validation-for="StartDate" class="text-danger"></span>
+                    </div>
+
+                    <div class="col-md-6 mb-3">
+                        <label asp-for="EndDate" class="form-label">End Date</label>
+                        <input asp-for="EndDate" type="datetime-local" class="form-control" required />
+                        <span asp-validation-for="EndDate" class="text-danger"></span>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-md-6 mb-3">
+                        <label asp-for="Location" class="form-label">Event Location</label>
+                        <input asp-for="Location" class="form-control" placeholder="Enter event location" />
+                        <span asp-validation-for="Location" class="text-danger"></span>
+                    </div>
+
+                    <div class="col-md-6 mb-3">
+                        <label asp-for="FormatType" class="form-label">Format Type</label>
+                        <select asp-for="FormatType" asp-items="Html.GetEnumSelectList<FormatType>()" class="form-select">
+                            <option value="">Select Format Type</option>
+                        </select>
+                        <span asp-validation-for="FormatType" class="text-danger"></span>
+                    </div>
+                </div>
+
+                <button type="submit" class="btn btn-primary">Create Event</button>
+            </form>
         </div>
+
         <!--end of container-->
     </section>
     <!--end of section-->
 </div>
+
+
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}
+
+@* <form method="post" asp-action="Create" enctype="multipart/form-data">
+    <div class="form-row form-group">
+        <div class="col">
+            <label asp-for="Type">Type</label>
+            <input asp-for="Type" class="form-control form-control-lg" placeholder="Title" />
+            <span asp-validation-for="Type" class="text-danger"></span>
+        </div>
+        <div class="col">
+            <label asp-for="FormatType">ClubCategory</label>
+            <select asp-for="FormatType" asp-items="@Html.GetEnumSelectList<FormatType>()" class="form-control form-control-lg">
+                <option>--Select--</option>
+            </select>
+            <span asp-validation-for="FormatType" class="text-danger"></span>
+        </div>
+    </div>
+    <div class="form-row form-group">
+        <div class="col">
+            <label asp-for="Title">Title</label>
+            <input asp-for="Title" type="text" class="form-control form-control-lg" placeholder="Description" />
+            <span asp-validation-for="Title" class="text-danger"></span>
+        </div>
+    </div>
+    <div class="form-row form-group">
+        <div class="col">
+            <label asp-for="Description">Description</label>
+            <input asp-for="Description" type="text" class="form-control form-control-lg" placeholder="Description" />
+            <span asp-validation-for="Description" class="text-danger"></span>
+        </div>
+    </div>
+    <div class="form-row form-group">
+        <div class="col">
+            <label asp-for="StartDate">@Model.StartDate</label>
+            <input asp-for="StartDate" type="date" class="form-control form-control-lg" />
+            <span asp-validation-for="StartDate" class="text-danger"></span>
+        </div>
+    </div>
+    <div class="form-row form-group">
+        <div class="col">
+            <label asp-for="EndDate">@Model.EndDate</label>
+            <input asp-for="EndDate" type="date" class="form-control form-control-lg" />
+            <span asp-validation-for="EndDate" class="text-danger"></span>
+        </div>
+    </div>
+    <div class="form-row form-group">
+        <div class="col">
+            <label asp-for="Location">Location</label>
+            <input asp-for="Location" class="form-control form-control-lg" />
+            <span asp-validation-for="Location" class="text-danger"></span>
+        </div>
+    </div>
+    @* <div class="col">
+    <label asp-for="Address.State">State</label>
+    <input asp-for="Address.State" class="form-control form-control-lg" placeholder="State" />
+    <span asp-validation-for="Address.State" class="text-danger"></span>
+    </div>
+    </div>
+    <div class="form-row form-group">
+    <div class="col">
+    <label asp-for="Image">Image</label>
+    <input asp-for="Image" type="file" class="form-control form-control-lg" placeholder="Image" />
+    <span asp-validation-for="Image" class="text-danger"></span>
+    </div>
+    </div>
+    
+    <div class="form-row form-group">
+        <div class="col">
+            <button class="btn btn-block btn-success btn-lg" type="submit">Register</button>
+        </div>
+    </div>
+
+</form> *@

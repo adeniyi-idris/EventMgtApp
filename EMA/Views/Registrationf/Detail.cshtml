@@ -1,0 +1,109 @@
+﻿@model Registration
+@{
+}
+
+@{
+    ViewData["Title"] = $"{Model.FirstName} {Model.LastName} - Registration Details";
+}
+
+<div class="container mt-4">
+    <div class="row">
+        <div class="col-md-8 offset-md-2">
+            <div class="card">
+                <div class="card-header d-flex justify-content-between align-items-center">
+                    <h1 class="card-title mb-0">Registration Details</h1>
+                    <div class="btn-group">
+                        <a asp-action="Edit" asp-route-id="@Model.Id" class="btn btn-primary">
+                            <i class="fas fa-edit"></i> Edit Registration
+                        </a>
+                        <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#deleteConfirmModal">
+                            <i class="fas fa-trash"></i> Cancel Registration
+                        </button>
+                    </div>
+                </div>
+
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <h5>Personal Information</h5>
+                            <dl class="row">
+                                <dt class="col-sm-4">First Name:</dt>
+                                <dd class="col-sm-8">@Model.FirstName</dd>
+
+                                <dt class="col-sm-4">Last Name:</dt>
+                                <dd class="col-sm-8">@Model.LastName</dd>
+
+                                <dt class="col-sm-4">Email:</dt>
+                                <dd class="col-sm-8">
+                                    <a href="mailto:@Model.Email">@Model.Email</a>
+                                </dd>
+
+                                <dt class="col-sm-4">Phone Number:</dt>
+                                <dd class="col-sm-8">
+                                    @(string.IsNullOrEmpty(Model.PhoneNumber) ? "Not Provided" : Model.PhoneNumber)
+                                </dd>
+                            </dl>
+                        </div>
+
+                        <div class="col-md-6">
+                            <h5>Registration Details</h5>
+                            <dl class="row">
+                                <dt class="col-sm-4">Registration Type:</dt>
+                                <dd class="col-sm-8">@Model.RegistrationType</dd>
+
+                                <dt class="col-sm-4">Organization:</dt>
+                                <dd class="col-sm-8">
+                                    @(string.IsNullOrEmpty(Model.Organization) ? "Not Specified" : Model.Organization)
+                                </dd>
+
+                                <dt class="col-sm-4">Terms Acceptance:</dt>
+                                <dd class="col-sm-8">
+                                    @(Model.AcceptTerms ? "Accepted" : "Not Accepted")
+                                </dd>
+                            </dl>
+                        </div>
+                    </div>
+
+                    @if (!string.IsNullOrEmpty(Model.SpecialRequirements))
+                    {
+                        <div class="mt-3">
+                            <h5>Special Requirements</h5>
+                            <p>@Model.SpecialRequirements</p>
+                        </div>
+                    }
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Delete Confirmation Modal -->
+<div class="modal fade" id="deleteConfirmModal" tabindex="-1" aria-labelledby="deleteConfirmModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="deleteConfirmModalLabel">Confirm Registration Cancellation</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                Are you sure you want to cancel the registration for @Model.FirstName @Model.LastName?
+                <br />
+                <strong>This action cannot be undone.</strong>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Keep Registration</button>
+                <form asp-action="Delete" asp-route-id="@Model.Id" method="post">
+                    <button type="submit" class="btn btn-danger">Confirm Cancellation</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    <script>
+        $(function() {
+            // Optional: Add any additional client-side validation or interactions
+        });
+    </script>
+}

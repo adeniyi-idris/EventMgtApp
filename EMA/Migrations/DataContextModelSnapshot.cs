@@ -141,20 +141,43 @@ namespace EMA.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
+                    b.Property<bool>("AcceptTerms")
+                        .HasColumnType("bit");
+
                     b.Property<string>("AppUserId")
                         .HasColumnType("nvarchar(450)");
+
+                    b.Property<string>("Email")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<int>("EventId")
                         .HasColumnType("int");
 
-                    b.Property<int>("FormatType")
+                    b.Property<string>("FirstName")
+                        .IsRequired()
+                        .HasMaxLength(50)
+                        .HasColumnType("nvarchar(50)");
+
+                    b.Property<string>("LastName")
+                        .IsRequired()
+                        .HasMaxLength(50)
+                        .HasColumnType("nvarchar(50)");
+
+                    b.Property<string>("Organization")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("PhoneNumber")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("RegistrationType")
                         .HasColumnType("int");
 
-                    b.Property<int>("IndustryType")
-                        .HasColumnType("int");
-
-                    b.Property<DateTime>("RegistyrationDate")
-                        .HasColumnType("datetime2");
+                    b.Property<string>("SpecialRequirements")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
 
                     b.HasKey("Id");
 

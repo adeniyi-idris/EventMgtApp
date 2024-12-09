@@ -3,37 +3,10 @@
   "WorkspaceRootPath": "C:\\Users\\user\\Documents\\DevProject\\EventManegmentApp\\EventManagementApp\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{DE7BE84C-E977-4239-85A9-D7FA1EEA4085}|..\\EMA\\EMA.csproj|c:\\users\\user\\documents\\devproject\\eventmanegmentapp\\ema\\controllers\\accountcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{DE7BE84C-E977-4239-85A9-D7FA1EEA4085}|..\\EMA\\EMA.csproj|c:\\users\\user\\documents\\devproject\\eventmanegmentapp\\ema\\views\\event\\edit.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\user\\AppData\\Local\\SourceServer\\193e9208317cfeb911934b6fab8ae15b346d73dc2f4aabd0d9459494fd4fd5c0\\EMA\\Controllers\\AccountController.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{DE7BE84C-E977-4239-85A9-D7FA1EEA4085}|..\\EMA\\EMA.csproj|c:\\users\\user\\documents\\devproject\\eventmanegmentapp\\ema\\views\\account\\login.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{DE7BE84C-E977-4239-85A9-D7FA1EEA4085}|..\\EMA\\EMA.csproj|c:\\users\\user\\documents\\devproject\\eventmanegmentapp\\ema\\viewmodel\\loginviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{DE7BE84C-E977-4239-85A9-D7FA1EEA4085}|..\\EMA\\EMA.csproj|c:\\users\\user\\documents\\devproject\\eventmanegmentapp\\ema\\models\\appuser.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{DE7BE84C-E977-4239-85A9-D7FA1EEA4085}|..\\EMA\\EMA.csproj|c:\\users\\user\\documents\\devproject\\eventmanegmentapp\\ema\\models\\event.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{DE7BE84C-E977-4239-85A9-D7FA1EEA4085}|..\\EMA\\EMA.csproj|c:\\users\\user\\documents\\devproject\\eventmanegmentapp\\ema\\models\\registration.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{DE7BE84C-E977-4239-85A9-D7FA1EEA4085}|..\\EMA\\EMA.csproj|c:\\users\\user\\documents\\devproject\\eventmanegmentapp\\ema\\viewmodel\\registerviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{DE7BE84C-E977-4239-85A9-D7FA1EEA4085}|..\\EMA\\EMA.csproj|c:\\users\\user\\documents\\devproject\\eventmanegmentapp\\ema\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{DE7BE84C-E977-4239-85A9-D7FA1EEA4085}|..\\EMA\\EMA.csproj|c:\\users\\user\\documents\\devproject\\eventmanegmentapp\\ema\\views\\account\\register.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{DE7BE84C-E977-4239-85A9-D7FA1EEA4085}|..\\EMA\\EMA.csproj|c:\\users\\user\\documents\\devproject\\eventmanegmentapp\\ema\\views\\role\\upsert.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+      "AbsoluteMoniker": "D:0:0:{DE7BE84C-E977-4239-85A9-D7FA1EEA4085}|..\\EMA\\EMA.csproj|c:\\users\\user\\documents\\devproject\\eventmanegmentapp\\ema\\views\\registrationf\\edit.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     }
   ],
   "DocumentGroupContainers": [
@@ -43,140 +16,32 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 10,
+          "SelectedChildIndex": 0,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "AccountController.cs",
-              "DocumentMoniker": "C:\\Users\\user\\AppData\\Local\\SourceServer\\193e9208317cfeb911934b6fab8ae15b346d73dc2f4aabd0d9459494fd4fd5c0\\EMA\\Controllers\\AccountController.cs",
-              "RelativeDocumentMoniker": "..\\..\\..\\..\\AppData\\Local\\SourceServer\\193e9208317cfeb911934b6fab8ae15b346d73dc2f4aabd0d9459494fd4fd5c0\\EMA\\Controllers\\AccountController.cs",
-              "ToolTip": "C:\\Users\\user\\AppData\\Local\\SourceServer\\193e9208317cfeb911934b6fab8ae15b346d73dc2f4aabd0d9459494fd4fd5c0\\EMA\\Controllers\\AccountController.cs [Read Only]",
-              "RelativeToolTip": "..\\..\\..\\..\\AppData\\Local\\SourceServer\\193e9208317cfeb911934b6fab8ae15b346d73dc2f4aabd0d9459494fd4fd5c0\\EMA\\Controllers\\AccountController.cs [Read Only]",
-              "ViewState": "AgIAAKYAAAAAAAAAAAAiwLAAAAAIAAAAAQAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-06T20:30:53.273Z",
-              "EditorCaption": " [Read Only]"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "Login.cshtml",
-              "DocumentMoniker": "C:\\Users\\user\\Documents\\DevProject\\EventManegmentApp\\EMA\\Views\\Account\\Login.cshtml",
-              "RelativeDocumentMoniker": "..\\EMA\\Views\\Account\\Login.cshtml",
-              "ToolTip": "C:\\Users\\user\\Documents\\DevProject\\EventManegmentApp\\EMA\\Views\\Account\\Login.cshtml",
-              "RelativeToolTip": "..\\EMA\\Views\\Account\\Login.cshtml",
-              "ViewState": "AgIAAAIAAAAAAAAAAAAAABEAAAA2AAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-12-06T20:23:50.738Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "LoginViewModel.cs",
-              "DocumentMoniker": "C:\\Users\\user\\Documents\\DevProject\\EventManegmentApp\\EMA\\ViewModel\\LoginViewModel.cs",
-              "RelativeDocumentMoniker": "..\\EMA\\ViewModel\\LoginViewModel.cs",
-              "ToolTip": "C:\\Users\\user\\Documents\\DevProject\\EventManegmentApp\\EMA\\ViewModel\\LoginViewModel.cs",
-              "RelativeToolTip": "..\\EMA\\ViewModel\\LoginViewModel.cs",
-              "ViewState": "AgIAAAUAAAAAAAAAAAAAAAwAAAAlAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-06T20:09:02.918Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "Event.cs",
-              "DocumentMoniker": "C:\\Users\\user\\Documents\\DevProject\\EventManegmentApp\\EMA\\Models\\Event.cs",
-              "RelativeDocumentMoniker": "..\\EMA\\Models\\Event.cs",
-              "ToolTip": "C:\\Users\\user\\Documents\\DevProject\\EventManegmentApp\\EMA\\Models\\Event.cs",
-              "RelativeToolTip": "..\\EMA\\Models\\Event.cs",
-              "ViewState": "AgIAAAoAAAAAAAAAAAAAABEAAAAtAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-06T20:02:32.783Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "Registration.cs",
-              "DocumentMoniker": "C:\\Users\\user\\Documents\\DevProject\\EventManegmentApp\\EMA\\Models\\Registration.cs",
-              "RelativeDocumentMoniker": "..\\EMA\\Models\\Registration.cs",
-              "ToolTip": "C:\\Users\\user\\Documents\\DevProject\\EventManegmentApp\\EMA\\Models\\Registration.cs",
-              "RelativeToolTip": "..\\EMA\\Models\\Registration.cs",
-              "ViewState": "AgIAAAcAAAAAAAAAAAAAAA8AAAAtAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-06T20:02:21.358Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "AppUser.cs",
-              "DocumentMoniker": "C:\\Users\\user\\Documents\\DevProject\\EventManegmentApp\\EMA\\Models\\AppUser.cs",
-              "RelativeDocumentMoniker": "..\\EMA\\Models\\AppUser.cs",
-              "ToolTip": "C:\\Users\\user\\Documents\\DevProject\\EventManegmentApp\\EMA\\Models\\AppUser.cs",
-              "RelativeToolTip": "..\\EMA\\Models\\AppUser.cs",
-              "ViewState": "AgIAAAcAAAAAAAAAAAAAABAAAAAvAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-06T19:56:50.659Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 8,
-              "Title": "Program.cs",
-              "DocumentMoniker": "C:\\Users\\user\\Documents\\DevProject\\EventManegmentApp\\EMA\\Program.cs",
-              "RelativeDocumentMoniker": "..\\EMA\\Program.cs",
-              "ToolTip": "C:\\Users\\user\\Documents\\DevProject\\EventManegmentApp\\EMA\\Program.cs",
-              "RelativeToolTip": "..\\EMA\\Program.cs",
-              "ViewState": "AgIAABYAAAAAAAAAAAAAACMAAAAEAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-06T17:47:31.055Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 10,
-              "Title": "Upsert.cshtml",
-              "DocumentMoniker": "C:\\Users\\user\\Documents\\DevProject\\EventManegmentApp\\EMA\\Views\\Role\\Upsert.cshtml",
-              "RelativeDocumentMoniker": "..\\EMA\\Views\\Role\\Upsert.cshtml",
-              "ToolTip": "C:\\Users\\user\\Documents\\DevProject\\EventManegmentApp\\EMA\\Views\\Role\\Upsert.cshtml",
-              "RelativeToolTip": "..\\EMA\\Views\\Role\\Upsert.cshtml",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-12-06T17:44:59.58Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 9,
-              "Title": "Register.cshtml",
-              "DocumentMoniker": "C:\\Users\\user\\Documents\\DevProject\\EventManegmentApp\\EMA\\Views\\Account\\Register.cshtml",
-              "RelativeDocumentMoniker": "..\\EMA\\Views\\Account\\Register.cshtml",
-              "ToolTip": "C:\\Users\\user\\Documents\\DevProject\\EventManegmentApp\\EMA\\Views\\Account\\Register.cshtml",
-              "RelativeToolTip": "..\\EMA\\Views\\Account\\Register.cshtml",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-12-06T17:41:53.089Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "RegisterViewModel.cs",
-              "DocumentMoniker": "C:\\Users\\user\\Documents\\DevProject\\EventManegmentApp\\EMA\\ViewModel\\RegisterViewModel.cs",
-              "RelativeDocumentMoniker": "..\\EMA\\ViewModel\\RegisterViewModel.cs",
-              "ToolTip": "C:\\Users\\user\\Documents\\DevProject\\EventManegmentApp\\EMA\\ViewModel\\RegisterViewModel.cs",
-              "RelativeToolTip": "..\\EMA\\ViewModel\\RegisterViewModel.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAAYAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-06T17:41:38.554Z"
-            },
-            {
-              "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "AccountController.cs",
-              "DocumentMoniker": "C:\\Users\\user\\Documents\\DevProject\\EventManegmentApp\\EMA\\Controllers\\AccountController.cs",
-              "RelativeDocumentMoniker": "..\\EMA\\Controllers\\AccountController.cs",
-              "ToolTip": "C:\\Users\\user\\Documents\\DevProject\\EventManegmentApp\\EMA\\Controllers\\AccountController.cs",
-              "RelativeToolTip": "..\\EMA\\Controllers\\AccountController.cs",
-              "ViewState": "AgIAAKgAAAAAAAAAAAAcwKwAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-06T17:37:15.897Z",
+              "Title": "Edit.cshtml",
+              "DocumentMoniker": "C:\\Users\\user\\Documents\\DevProject\\EventManegmentApp\\EMA\\Views\\Event\\Edit.cshtml",
+              "RelativeDocumentMoniker": "..\\EMA\\Views\\Event\\Edit.cshtml",
+              "ToolTip": "C:\\Users\\user\\Documents\\DevProject\\EventManegmentApp\\EMA\\Views\\Event\\Edit.cshtml",
+              "RelativeToolTip": "..\\EMA\\Views\\Event\\Edit.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAIAAAAMAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-12-09T00:07:26.054Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Edit.cshtml",
+              "DocumentMoniker": "C:\\Users\\user\\Documents\\DevProject\\EventManegmentApp\\EMA\\Views\\Registrationf\\Edit.cshtml",
+              "RelativeDocumentMoniker": "..\\EMA\\Views\\Registrationf\\Edit.cshtml",
+              "ToolTip": "C:\\Users\\user\\Documents\\DevProject\\EventManegmentApp\\EMA\\Views\\Registrationf\\Edit.cshtml",
+              "RelativeToolTip": "..\\EMA\\Views\\Registrationf\\Edit.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAcAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-12-09T00:07:12.147Z",
               "EditorCaption": ""
             }
           ]

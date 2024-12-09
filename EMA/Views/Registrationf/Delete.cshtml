@@ -1,0 +1,69 @@
+﻿@using EMA.Enums
+@model Registration 
+@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+
+<form method="post" asp-action="Delete" class="row g-3">
+    <div class="mb-3">
+        <input hidden asp-for="Id" class="form-control" />
+    </div>
+    <div class="row">
+        <div class="col-md-6 mb-3">
+            <label asp-for="FirstName" class="form-label">First Name</label>
+            <input asp-for="FirstName" class="form-control" placeholder="Enter first name" required />
+            <span asp-validation-for="FirstName" class="text-danger"></span>
+        </div>
+
+        <div class="col-md-6 mb-3">
+            <label asp-for="LastName" class="form-label">Last Name</label>
+            <input asp-for="LastName" class="form-control" placeholder="Enter last name" required />
+            <span asp-validation-for="LastName" class="text-danger"></span>
+        </div>
+    </div>
+
+    <div class="mb-3">
+        <label asp-for="Email" class="form-label">Email Address</label>
+        <input asp-for="Email" type="email" class="form-control" placeholder="Enter email" required />
+        <span asp-validation-for="Email" class="text-danger"></span>
+    </div>
+
+    <div class="row">
+        <div class="col-md-6 mb-3">
+            <label asp-for="PhoneNumber" class="form-label">Phone Number</label>
+            <input asp-for="PhoneNumber" type="tel" class="form-control" placeholder="Enter phone number" />
+            <span asp-validation-for="PhoneNumber" class="text-danger"></span>
+        </div>
+
+        <div class="col-md-6 mb-3">
+            <label asp-for="Organization" class="form-label">Organization</label>
+            <input asp-for="Organization" class="form-control" placeholder="Your company or institution" />
+            <span asp-validation-for="Organization" class="text-danger"></span>
+        </div>
+    </div>
+
+    <div class="mb-3">
+        <label asp-for="RegistrationType" class="form-label">Registration Type</label>
+        <select asp-for="RegistrationType" asp-items="Html.GetEnumSelectList<RegistrationType>()" class="form-select" required>
+            <option value="">Select Registration Type</option>
+        </select>
+        <span asp-validation-for="RegistrationType" class="text-danger"></span>
+    </div>
+
+    <div class="mb-3">
+        <label asp-for="SpecialRequirements" class="form-label">Special Requirements</label>
+        <textarea asp-for="SpecialRequirements" class="form-control" rows="3" placeholder="Any dietary restrictions, accessibility needs, etc."></textarea>
+    </div>
+
+    <div class="form-check mb-3">
+        <input asp-for="AcceptTerms" type="checkbox" class="form-check-input" required />
+        <label asp-for="AcceptTerms" class="form-check-label">
+            I agree to the event terms and conditions
+        </label>
+        <span asp-validation-for="AcceptTerms" class="text-danger"></span>
+    </div>
+
+    <button type="submit" class="btn btn-danger w-100">Delete</button>
+</form>

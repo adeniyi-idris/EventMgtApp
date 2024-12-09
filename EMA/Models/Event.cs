@@ -16,6 +16,6 @@ namespace EMA.Models
         public string Location { get; set; }
         public FormatType FormatType { get; set; }
         public AppUser? AppUser { get; set; }
-        public List<Registration> Registrations { get; set; }
+        public List<Registration>? Registrations { get; set; }
     }
 }

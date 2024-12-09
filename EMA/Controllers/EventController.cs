@@ -1,5 +1,6 @@
 ﻿using EMA.Data;
 using EMA.Models;
+using EMA.ViewModel;
 using Microsoft.AspNetCore.Mvc;
 
 namespace EMA.Controllers
@@ -14,7 +15,7 @@ namespace EMA.Controllers
         }
         public IActionResult Index()
         {
-            List<Event> events = new List<Event>();
+            List<Event> events = _context.Events.ToList();
             return View(events);
         }
 
@@ -26,23 +27,33 @@ namespace EMA.Controllers
 
         public IActionResult Create()
         {
-            var ev = new Event();
-            return View(ev);
+            //var ev = new Event();
+            return View();
         }
 
         [HttpPost]
-        public IActionResult Create(Event ev)
+        public IActionResult Create(EventViewModel ev)
         {
             if (ModelState.IsValid)
             {
-                _context.Events.Add(ev);
+                var Event = new Event
+                {
+                    Title = ev.Title,
+                    Description = ev.Description,
+                    Type = ev.Type,
+                    StartDate = ev.StartDate,
+                    EndDate = ev.EndDate,
+                    Location = ev.Location,
+                    FormatType = ev.FormatType,
+                };
+                _context.Events.Add(Event);
                 _context.SaveChanges();
                 return RedirectToAction("Index");
             }
             return View(ev);
         }
 
-        public IActionResult Edit(int id)
+        public IActionResult Edit(int? id)
         {
             if (id == null || id == 0)
             {
@@ -55,15 +66,27 @@ namespace EMA.Controllers
             {
                 return NotFound();
             }
+            
             return View(Ev);
         }
 
         [HttpPost]
-        public IActionResult Edit(Event ev)
+        [ValidateAntiForgeryToken]
+        public IActionResult Edit(int id,EventViewModel ev)
         {
             if (ModelState.IsValid)
             {
-                _context.Events.Update(ev);
+                var Event = new Event
+                {
+                    Title = ev.Title,
+                    Description = ev.Description,
+                    Type = ev.Type,
+                    StartDate = ev.StartDate,
+                    EndDate = ev.EndDate,
+                    Location = ev.Location,
+                    FormatType = ev.FormatType,
+                };
+                _context.Events.Update(Event);
                 _context.SaveChanges();
                 return RedirectToAction("Index");
             }
